@@ -12,6 +12,9 @@ const Grid = () => {
   ]);
 
   const updateGrid = (first, second, value) => {
+    if (winner) {
+      return;
+    }
     const newGrid = [...gridValue];
     newGrid[first][second] = value;
     setGridValue(newGrid);
