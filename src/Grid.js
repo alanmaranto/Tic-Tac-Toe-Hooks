@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Square from "./Square";
-import checkIfMatch from "./helpers/validate";
+import { checkIfMatch, checkIfArrayFilled } from "./helpers/validate";
 
 const Grid = () => {
   const [turn, setTurn] = useState("X");
@@ -12,7 +12,7 @@ const Grid = () => {
   ]);
 
   const updateGrid = (first, second, value) => {
-    if (winner) {
+    if (winner || checkIfArrayFilled(gridValue)) {
       return;
     }
     const newGrid = [...gridValue];
@@ -40,7 +40,7 @@ const Grid = () => {
       [0, 0, 0],
       [0, 0, 0],
     ]);
-    setTurn('X')
+    setTurn("X");
   };
 
   return (

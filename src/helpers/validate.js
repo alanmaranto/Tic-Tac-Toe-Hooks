@@ -20,7 +20,7 @@ const threePlaceCheck = (item1, item2, item3) => {
   };
 };
 
-const checkIfMatch = (grid) => {
+export const checkIfMatch = (grid) => {
   let isMatched;
   // Horizontal [00,01,02]
   isMatched = threePlaceCheck(grid[0][0], grid[0][1], grid[0][2]);
@@ -71,6 +71,17 @@ const checkIfMatch = (grid) => {
   }
 
   return false;
+};
+
+export const checkIfArrayFilled = (grid) => {
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      if (grid[i][j] === 0) {
+        return false;
+      }
+    }
+  }
+  return true;
 };
 
 export default checkIfMatch;
