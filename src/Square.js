@@ -1,8 +1,8 @@
 import React from "react";
 
-const Square = ({ updateGrid, first, second, value }) => {
+const Square = ({ updateGrid, first, second, value, turn }) => {
   return (
-    <div className="block" onClick={() => updateGrid(first, second, 'X')}>
+    <div className="block" onClick={() => updateGrid(first, second, turn)}>
       {value}
     </div>
   );
