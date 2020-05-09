@@ -4,7 +4,7 @@ import checkIfMatch from "./helpers/validate";
 
 const Grid = () => {
   const [turn, setTurn] = useState("X");
-  const [winner, setWinner] = useState('');
+  const [winner, setWinner] = useState("");
   const [gridValue, setGridValue] = useState([
     [0, 0, 0],
     [0, 0, 0],
@@ -26,15 +26,26 @@ const Grid = () => {
 
     if (result.match === true) {
       //Set a winner and stop the game
-      setWinner(result.char)
+      setWinner(result.char);
     }
 
     // Update turn
     turn === "X" ? setTurn("O") : setTurn("X");
   };
+
+  const resetGrid = () => {
+    setWinner("");
+    setGridValue([
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ]);
+  };
+
   return (
     <div>
       <h1>Title</h1>
+      <div onClick={() => resetGrid()}>Reset</div>
       <div className="center">
         <div className="outer">
           <div style={{ display: "flex" }}>
