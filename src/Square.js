@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const Square = () => {
-    return (
-        <div className="block">0</div>
-    )
-}
+const Square = ({ updateGrid, first, second, value }) => {
+  return (
+    <div className="block" onClick={() => updateGrid(first, second, 'X')}>
+      {value}
+    </div>
+  );
+};
 
 export default Square;
