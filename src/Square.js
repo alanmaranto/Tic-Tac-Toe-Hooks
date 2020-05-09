@@ -2,7 +2,7 @@ import React from 'react';
 
 const Square = () => {
     return (
-        <div>0</div>
+        <div className="block">0</div>
     )
 }
 
