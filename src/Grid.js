@@ -40,11 +40,12 @@ const Grid = () => {
       [0, 0, 0],
       [0, 0, 0],
     ]);
+    setTurn('X')
   };
 
   return (
     <div>
-      <h1>Title</h1>
+      <h1>{turn}'s Turn</h1>
       <div onClick={() => resetGrid()}>Reset</div>
       <div className="center">
         <div className="outer">
@@ -89,7 +90,7 @@ const Grid = () => {
           </div>
         </div>
       </div>
-      <h4>Result</h4>
+      {winner !== "" && <h4>The winner is {winner}</h4>}
     </div>
   );
 };
