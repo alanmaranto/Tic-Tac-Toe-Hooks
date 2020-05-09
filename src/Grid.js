@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Square from "./Square";
+import checkIfMatch from "./helpers/validate";
 
 const Grid = () => {
   const [turn, setTurn] = useState("X");
+  const [winner, setWinner] = useState('');
   const [gridValue, setGridValue] = useState([
     [0, 0, 0],
     [0, 0, 0],
@@ -13,6 +15,16 @@ const Grid = () => {
     const newGrid = [...gridValue];
     newGrid[first][second] = value;
     setGridValue(newGrid);
+
+    // Check the result
+    const result = checkIfMatch(newGrid);
+
+    console.log(result);
+
+    if (result.match === true) {
+      //Set a winner and stop the game
+      setWinner(result.char)
+    }
 
     // Update turn
     turn === "X" ? setTurn("O") : setTurn("X");
