@@ -10,7 +10,16 @@ const Grid = () => {
   return (
     <div>
       <h1>Title</h1>
+      <div style={{ display: "flex" }}></div>
       {gridValue[0].map((block) => {
+        return <Square />;
+      })}
+            <div style={{ display: "flex" }}></div>
+      {gridValue[1].map((block) => {
+        return <Square />;
+      })}
+            <div style={{ display: "flex" }}></div>
+      {gridValue[2].map((block) => {
         return <Square />;
       })}
       <h4>Result</h4>
